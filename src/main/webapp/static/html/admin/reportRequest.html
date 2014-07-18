@@ -1,0 +1,25 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h3 class="page-header">投资报告发送记录</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="item in items">
+        <div class="list-item">
+          <i class="fa fa-download"></i>
+          <span class="user_name"><a href="" ng-click="pop(item.need)">{{item.name}}</a></span>
+          <span class="user_email">{{item.email}}</span>
+          <span class="user_tel">{{item.tel}}</span>
+        </div>
+      </li>
+    </ul>
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">客户需求</h3>
+  </div>
+  <div class="modal-body">
+    <i class="fa fa-comment-o customer-need"></i> {{msg}}
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning" ng-click="cancel()">确定</button>
+  </div>
+</script>

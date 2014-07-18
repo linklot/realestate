@@ -1,0 +1,30 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h3 class="page-header">所有新闻</h3>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>栏目</th>
+          <th>标题</th>
+          <th>时间</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="topic in page.items">
+          <td>{{$index + 1}}</td>
+          <td>{{topic.column.name}}</td>
+          <td><a ng-href="#/topic/{{topic.id}}">{{topic.title}}</a></td>
+          <td>{{topic.readableTime}}</td>
+          <td><button class="btn btn-xs btn-link" ng-click="delTopic(topic.id)" ng-confirm-click="确定删除该新闻？">删除</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button ng-if="page.currentPage > 1" type="button" class="btn btn-info btn-xs" ng-click="navi(page.previousIndex, page.pageSize)">&lt;&lt; Previous</button>
+    第{{page.currentPage}}页/共{{page.pageCount}}页
+    <button ng-if="page.currentPage < page.pageCount" type="button" class="btn btn-info btn-xs" ng-click="navi(page.nextIndex, page.pageSize)">Next &gt;&gt;</button>
+  </div>
+</div>

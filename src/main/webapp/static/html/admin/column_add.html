@@ -1,0 +1,17 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h3 class="page-header">添加栏目</h3>
+  <div class="col">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">上级栏目：{{parentColumn.id}}# {{parentColumn.name}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <input type="text" ng-model="subColumnName" class="form-control" placeholder="栏目名称"/>
+        </div>
+        <button type="submit" ng-click="addColumn()" class="btn btn-success">添加栏目</button>
+        {{subColumnName}}
+      </div>
+    </div>
+  </div>
+</div>

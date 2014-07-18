@@ -1,0 +1,34 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h3 class="page-header">修改新闻</h3>
+  <div class="alert alert-info">
+    所属栏目：
+    #{{topic.column.id}} <strong>{{topic.column.name}}</strong>
+  </div>
+  <div class="col">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">新闻</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="title">标题</label>
+          <input type="text" class="form-control" id="title" placeholder="Enter title" ng-model="topic.title" required ng-trim="true">
+        </div>
+        <div class="form-group">
+          <label for="source">来源</label>
+          <input type="text" class="form-control" id="source" placeholder="Enter source" ng-model="topic.source">
+        </div>
+        <div class="form-group">
+          <label for="content">正文</label>
+          <textarea id="content" class="form-control" ui-tinymce="tinymceOptions" rows="20" ng-model="topic.content" placeholder="Enter content"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" ng-click="modifyTopic()">修 改</button>
+        </div>
+        <div ng-show="updated" class="alert alert-success">
+          <strong>已保存修改！</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

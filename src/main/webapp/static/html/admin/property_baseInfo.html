@@ -1,0 +1,98 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div class="col">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">房源基本信息</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row form-group">
+          <div class="col-xs-6">
+            <label for="address">地址</label>
+            <input type="text" class="form-control" id="address" placeholder="Address" ng-model="property.address" required ng-trim="true">
+          </div>
+          <div class="col-xs-2">
+            <label for="propertyType">类型</label>
+            <select class="form-control" id="propertyType" ng-model="property.propertyType">
+              <option value="HOUSE">House</option>
+              <option value="APARTMENT">Apartment</option>
+              <option value="UNIT">Unit</option>
+              <option value="TOWNHOUSE">Townhouse</option>
+              <option value="LAND">Land</option>
+            </select>
+          </div>
+          <div class="col-xs-3">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" ng-model="property.price" placeholder="Price">
+          </div>
+          <div class="col-xs-1">
+            <label for="carousel">跑马灯</label>
+            <input type="checkbox" class="checkbox" id="carousel" ng-model="property.carousel">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-xs-4">
+            <label for="suburb">Suburb</label>
+            <input type="text" class="form-control" id="suburb" ng-model="property.suburb" placeholder="Suburb">
+          </div>
+          <div class="col-xs-1">
+            <label for="beds">卧室</label>
+            <input type="text" class="form-control" id="beds" ng-model="property.beds" placeholder="0">
+          </div>
+          <div class="col-xs-1">
+            <label for="bathrooms">浴室</label>
+            <input type="text" class="form-control" id="bathrooms" ng-model="property.bathrooms" placeholder="0">
+          </div>
+          <div class="col-xs-1">
+            <label for="carSpaces">车位</label>
+            <input type="text" class="form-control" id="carSpaces" ng-model="property.carSpaces" placeholder="0">
+          </div>
+          <div class="col-xs-2">
+            <label for="newOrEstablished">现房/期房</label>
+            <select class="form-control" id="newOrEstablished" ng-model="property.newOrEstablished">
+              <option value="ESTABLISHED">现房</option>
+              <option value="NEW">期房</option>
+            </select>
+          </div>
+          <div class="col-xs-2">
+            <label for="landSize">土地面积 m<sup>2</sup></label>
+            <input type="text" class="form-control" id="landSize" ng-model="property.landSize" placeholder="0.0">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-xs-2">
+            <label for="agency">中介公司</label>
+            <input type="text" class="form-control" id="agency" ng-model="property.agency" placeholder="">
+          </div>
+          <div class="col-xs-2">
+            <label for="contact">联系人</label>
+            <input type="text" class="form-control" id="contact" ng-model="property.contact" placeholder="">
+          </div>
+          <div class="col-xs-2">
+            <label for="contactNote">联系方式</label>
+            <input type="text" class="form-control" id="contactNote" ng-model="property.contactNote" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col">
+            <label for="feature">特色</label>
+            <textarea id="feature" class="form-control" rows="2" ng-model="property.feature" placeholder="Feature"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col">
+            <label for="intro">介绍</label>
+            <textarea id="intro" class="form-control" ui-tinymce="tinymceOptions" rows="10" ng-model="property.introduction" placeholder="Enter introduction"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-2">
+            <button type="button" class="btn btn-sm btn-primary" ng-click="saveBaseInfo()">保存基础信息</button>
+          </div>
+          <div class="col-md-2" ng-show="modifyOld">
+            <button class="btn btn-sm btn-danger" ng-click="delete()" ng-confirm-click="确定要删除吗？">删除此数据</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

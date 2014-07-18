@@ -1,0 +1,43 @@
+<style>
+.propertyRow {
+  cursor: pointer;
+}
+
+.propertyRow:hover {
+  color: #FF0000;
+}
+</style>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h3 class="page-header">房源列表</h3>
+  
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>地址</th>
+          <th>Suburb</th>
+          <th>类型</th>
+          <th>价格</th>
+          <th>跑马灯</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="p in page.items" class="propertyRow" ng-click="modify(p.id)">
+          <td>{{$index + 1}}</td>
+          <td>{{p.address}}</td>
+          <td>{{p.suburb}}</td>
+          <td>{{p.propertyType}}</td>
+          <td>{{p.price}}</td>
+          <td><i ng-show="p.carousel" class="fa fa-check"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button ng-if="page.currentPage > 1" type="button" class="btn btn-info btn-xs" ng-click="navi(page.previousIndex, page.pageSize)">&lt;&lt; Previous</button>
+    第{{page.currentPage}}页/共{{page.pageCount}}页
+    <button ng-if="page.currentPage < page.pageCount" type="button" class="btn btn-info btn-xs" ng-click="navi(page.nextIndex, page.pageSize)">Next &gt;&gt;</button>
+  </div>
+</div>

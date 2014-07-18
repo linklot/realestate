@@ -1,0 +1,27 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div class="col">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">添加房源 － 图片</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-sm-3" ng-repeat="pic in pictureGroup.pictures">
+          <div># {{$index+1}}</div>
+          <div><img ng-src="/static/propertyPic/{{pic.id}}" class="img-thumbnail"/></div>
+          <div><button class="btn btn-warning btn-xs" ng-click="delete(pic.id)">Delete</button></div>
+        </div>
+      </div>
+    </div>
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">上传图片<span style="color:#006699; font-size:13px;">（第一张图片最佳尺寸：729×440 pixels）</span></h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <input type="file" id="pictureFile" ng-file-select="onPicSelect($files)">
+          </div>
+          <button type="submit" class="btn btn-info" ng-click="upload()">上传</button>
+        </div>
+      </div>
+  </div>
+</div>

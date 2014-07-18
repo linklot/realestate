@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="field_renderer.html">
+    #{{sub.id}}
+    {{sub.name}}
+    <button ng-click="addSubColumn(sub.id, sub.name)" class="btn btn-xs btn-link">添加下级栏目</button>
+    <button ng-click="deleteColumn(sub.id, sub.name)" class="btn btn-xs btn-link" ng-confirm-click="确定删除该栏目？">删除栏目</button>
+    <ul style="margin-left:20px;padding-left:0px;list-style-type:none">
+      <li style="margin-left:0px;padding-left:0px" ng-repeat="sub in sub.children" ng-include="'field_renderer.html'"></li>
+    </ul>
+</script>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h3 class="page-header">栏目列表</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        #{{rootColumn.id}}
+        {{rootColumn.name}}
+        <button ng-click="addSubColumn(rootColumn.id, rootColumn.name)" class="btn btn-xs btn-link">添加下级栏目</button>
+      </li>
+      <li style="padding-left:40px;list-style-type:none" class="list-group-item" ng-repeat="sub in rootColumn.children" ng-include="'field_renderer.html'"></li>
+    </ul>
+</div>
